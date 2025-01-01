@@ -1,6 +1,6 @@
 FROM python:3.11-bullseye as spark-base
 
-ARG SPARK_VERSION=3.5.3
+ARG SPARK_VERSION=3.5.4
 
 # Install tools required by the OS
 RUN apt-get update && \
@@ -66,7 +66,7 @@ ENTRYPOINT ["./entrypoint.sh"]
 
 FROM pyspark-base as jupyter-notebook
 
-ARG jupyterlab_version=4.3.1
+ARG jupyterlab_version=4.3.4
 
 ENV SPARK_REMOTE="sc://spark-master"
 RUN unset SPARK_MASTER
